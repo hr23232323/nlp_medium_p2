@@ -1,0 +1,173 @@
+html,
+body,
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+h1,
+h2,
+h3,
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+p {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.main-page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirmation_div {
+    position: absolute;
+    bottom: 50px;
+    transition: opacity 0.3s;
+}
+
+.main-content {
+    width: 60%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.top-half {
+    flex-basis: 30%;
+    flex-grow: 1
+}
+
+.bottom-half {
+    flex-basis: 70%;
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom-input {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 40%;
+    flex-grow: 1;
+}
+
+#slide-div {
+    width: 60%;
+    height: 220px;
+    display: flex;
+}
+
+.input-div {
+    flex-grow: 1;
+}
+
+.output-div {
+    flex-basis: 40%;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.input-form * {
+    padding: 1%;
+    margin: 2%;
+}
+
+.input-form {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.input-form textarea {
+    height: calc(100%-6%);
+    flex-grow: 4;
+    resize: none;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #fafafa;
+}
+
+.input-form button {
+    align-self: center;
+    height: 50%;
+    flex-grow: 1;
+    border: 2px solid #008CBA;
+    border-radius: 4px;
+    background-color: #008CBA;
+    color: #fff;
+}
+
+.input-form button:hover {
+    color: #fff;
+    background-color: #009CBA;
+    border: 2px solid #009CBA;
+    cursor: pointer;
+}
+
+.output-div img {
+    height: 80%;
+}
+
+
+.bottom-buttons {
+    display: none;
+    flex-direction: row;
+}
+
+.bottom-buttons .btn {
+    width: 40%;
+    margin: 2% 5%;
+    border-radius: 4px;
+    background-color: #fafafa;
+}
+
+.bottom-buttons .fail {
+    border: 2px solid #f44336;
+}
+
+.bottom-buttons .fail:hover {
+    color: #fff;
+    background-color: #f44336;
+    cursor: pointer;
+}
+
+.bottom-buttons .success {
+    border: 2px solid #4CAF50;
+}
+
+.bottom-buttons .success:hover {
+    color: #fff;
+    background-color: #4CAF50;
+    cursor: pointer;
+}
+
+
+.save-form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.save-form .btn {
+    margin: 10%;
+    flex-grow: 1;
+    width: 80%;
+}

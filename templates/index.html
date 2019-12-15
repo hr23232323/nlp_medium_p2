@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Teach me how to talk</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="main-page">
+        <div id="main-div" class="main-content">
+            <div class="top-half">
+                <h1>I'm a Natural Language Processing model.</h1>
+                <p><i>You can teach me how to understand humans. Use the below input field to type a review/feelings/thoughts and I'll guess how you're feeling. Feel free to correct me if I make a mistake, I'm still a beginner.</i></p>
+            </div>
+            <div class="bottom-half">
+                <div class="bottom-input">
+                    <div class="input-div">
+                        <form id="input-form" class="input-form" action="{{ url_for('predict')}}" method="post">
+                            <textarea id="input_text" name="input_text" placeholder="Type something!"></textarea>
+                            <button type="submit" class="pred-btn btn btn-primary btn-block btn-large">Predict</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="slide-div" class="bottom-buttons" style="display:none">
+            <div class="output-div" id="pred_div">
+                <img id="pred_image" src="" style="">
+            </div>
+            <form id="save-form" class="save-form" action="{{ url_for('save_pred')}}" method="post">
+                <button type="submit" class="btn success" name="save_type" value="correct">I was correct</button>
+                <button type="submit" class="btn fail" name="save_type" value="incorrect">I was incorrect</button>
+            </form>
+        </div>
+
+
+        <div class="confirmation_div">
+            <p id="confirmation_text"></p>
+        </div>
+    </div>
+
+
+</body>
+
+<script src="{{ url_for('static',filename='scripts/script.js') }}"></script>
+
+</html>
