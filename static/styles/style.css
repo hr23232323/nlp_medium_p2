@@ -36,6 +36,7 @@ p {
     position: absolute;
     bottom: 50px;
     transition: opacity 0.3s;
+    color: #008CBA;
 }
 
 .main-content {
