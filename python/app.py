@@ -6,8 +6,8 @@ import csv
 app = Flask(__name__, template_folder='../templates', static_folder='../static')
 
 # load models
-input_transformer = joblib.load(open(app.root_path + '/../static/models/input_transformer.pkl', 'rb'))
-model = joblib.load(open(app.root_path + '/../static/models/review_sentiment.pkl', 'rb'))
+input_transformer = joblib.load(open(app.static_folder + '/models/input_transformer.pkl', 'rb'))
+model = joblib.load(open(app.static_folder + '/models/review_sentiment.pkl', 'rb'))
 
 # global variables for data persistence across requests
 model_input=""
@@ -76,13 +76,13 @@ def save_pred():
             break
     
     # Save trained model pickle
-    joblib.dump(model, (app.root_path + '/../static/models/review_sentiment.pkl'))
+    joblib.dump(model, (app.static_folder + '/models/review_sentiment.pkl'))
     
     # fields inside CSV to store for retrain verification
     fields = [model_input, model_output, counter]
     
     #retrain model
-    with open('user_teaching_data.csv', 'a') as file:
+    with open((app.root_path + '/user_teaching_data.csv'), 'a') as file:
         writer = csv.writer(file)
         writer.writerow(fields)
     
